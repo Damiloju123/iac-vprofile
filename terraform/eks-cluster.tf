@@ -1,6 +1,6 @@
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "22.0.0"
+  version = "21.3.2"
 
   name    = local.cluster_name
   kubernetes_version = "1.31"
@@ -9,7 +9,7 @@ module "eks" {
   subnet_ids                     = module.vpc.private_subnets
   endpoint_public_access = true
 
-  node_group_defaults = {
+  eks_managed_node_group_defaults = {
     ami_type = "AL2023_x86_64_STANDARD"
   }
 
