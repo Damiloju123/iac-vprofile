@@ -22,7 +22,7 @@ module "eks" {
 
     two = {
       name           = "node-group-2"
-      ami_type       = "AL2023_x86_64_STANDARD"
+      ami_type       = "AL2023_x86_64"
       instance_types = ["t3.medium"]
 
       min_size     = 1
