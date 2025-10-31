@@ -17,22 +17,18 @@ module "eks" {
       name           = "node-group-1"
       ami_type       = "AL2023_x86_64_STANDARD"
       instance_types = ["t3.small"]
-
-      min_size     = 1
-      max_size     = 3
-      desired_size = 2
-      subnet_ids   = module.vpc.private_subnets
+      min_size       = 1
+      max_size       = 3
+      desired_size   = 2
     }
 
     two = {
       name           = "node-group-2"
       ami_type       = "AL2023_x86_64_STANDARD"
       instance_types = ["t3.small"]
-
-      min_size     = 1
-      max_size     = 2
-      desired_size = 1
-      subnet_ids   = module.vpc.private_subnets
+      min_size       = 1
+      max_size       = 2
+      desired_size   = 1
     }
   }
 }
