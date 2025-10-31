@@ -9,8 +9,6 @@ module "eks" {
   subnet_ids                  = module.vpc.private_subnets
   endpoint_public_access      = true
   endpoint_private_access     = true
-  endpoint_public_access_cidrs = ["0.0.0.0/0"]
-
   enable_irsa = true
 
   eks_managed_node_groups = {
