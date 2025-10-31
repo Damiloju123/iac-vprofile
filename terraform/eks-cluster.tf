@@ -5,11 +5,11 @@ module "eks" {
   name               = local.cluster_name
   kubernetes_version = "1.31"
 
-  vpc_id                         = module.vpc.vpc_id
-  subnet_ids                     = module.vpc.private_subnets
-  endpoint_public_access         = true
-  endpoint_private_access        = true
-  endpoint_public_access_cidrs   = ["0.0.0.0/0"]
+  vpc_id                       = module.vpc.vpc_id
+  subnet_ids                   = module.vpc.private_subnets
+  endpoint_public_access        = true
+  endpoint_private_access       = true
+  endpoint_public_access_cidrs  = ["0.0.0.0/0"]
 
   enable_irsa = true
 
