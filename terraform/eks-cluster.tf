@@ -3,7 +3,7 @@ module "eks" {
   version = "21.3.2"
 
   name               = local.cluster_name
-  kubernetes_version = "1.30"
+  kubernetes_version = "1.32"
 
   vpc_id                 = module.vpc.vpc_id
   subnet_ids             = module.vpc.private_subnets
@@ -12,7 +12,7 @@ module "eks" {
   eks_managed_node_groups = {
     one = {
       name           = "node-group-1"
-      ami_type       = "AL2_x86_64"
+      ami_type       = "AL2_x86_64_STANDARD"
       instance_types = ["t3.medium"]
 
       min_size     = 1
@@ -22,7 +22,7 @@ module "eks" {
 
     two = {
       name           = "node-group-2"
-      ami_type       = "AL2_x86_64"
+      ami_type       = "AL2_x86_64_STANDARD"
       instance_types = ["t3.medium"]
 
       min_size     = 1
